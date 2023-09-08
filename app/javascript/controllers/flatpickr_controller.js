@@ -1,19 +1,27 @@
+import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr"
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
-
-
-const initFlatpickr = () => {
-  const bookingForm = document.getElementById('booking-form-div');
-  if (bookingForm) {
-    const bookings = JSON.parse(bookingForm.dataset.bookings);
-    flatpickr("#range_start", {
-      plugins: [new rangePlugin({ input: "#range_end"})],
-      minDate: "today",
-      inline: true,
-      dateFormat: "Y-m-d",
-      "disable": bookings,
+// Connects to data-controller="flatpickr"
+export default class extends Controller {
+  connect() {
+    new flatpickr(this.element, {
+        enableTime: true,
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        disableRange: {
+          onReady: function () {
+              this.jumpToDate("2025-04")
+          },
+          disable: [
+            {
+                from: "15-09-2023",
+                to: "17-09-2023"
+            },
+            {
+                from: "01-10-2023",
+                to: "25-10-2023"
+            }
+          ]
+        },
     })
   }
-};
-
-export { initFlatpickr };
+}
