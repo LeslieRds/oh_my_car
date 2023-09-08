@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Voici votre réservation : </h1>
+  <h2>Vous avez réservé du <%= @booking.id.start_date %> au <%= @booking.id.end_date %></h2>
+</div>
+
+<div class="container">
+  <%= link_to "Voir Mes réservations", bookings_path(@bookings) %>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <h1> Toutes mes magnifiques réservations !! </h1>
+  <% number = 0 %>
+    <% @bookings.each do |booking| %>
+      Ma réservation numéro : <%=  number += 1 %>
+      La voiture : <%= booking.car.brand %>
+      du <%= booking.start_date %> au <%= booking.end_date %><br><br>
+    <% end %>
+  <h2>Vous souhaitez effectuer une autre réservation?</h2>
+  <%= link_to "Voir toutes les voitures", cars_path(@cars) %>
+</div>

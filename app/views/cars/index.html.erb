@@ -1,8 +1,8 @@
 <div class="container">
-  <h1> All our fantastics cars!!! </h1>
+  <h1> Voici toutes nos fantastiques voitures!!! </h1>
   <% @cars.each do |car| %>
     <%= car.brand %>
-     / Price : <%= car.price %>Simflouz
-    <%= link_to "see the car", car_path(car) %><br><br>
+     / Prix : <%= car.price %> Simflouz
+    <%= link_to "Voir la voiture", car_path(car) %><br><br>
   <% end %>
 </div>
