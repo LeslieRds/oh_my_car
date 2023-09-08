@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @car.brand %></h1><br><br>
+  Price : <%= @car.price %> Simflouz<br><br>
+  Where? : <%= @car.address %><br><br>
+  <%= link_to "Reserve it now!", new_car_booking_path(@car) %><br><br>
+  <%= link_to "Wanna back home?", cars_path(@cars) %><br><br>
+</div>
