@@ -4,12 +4,17 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
-    "bootstrap": "^5.0.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
     "react-flatpickr": "^3.10.13",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
   }
 }
